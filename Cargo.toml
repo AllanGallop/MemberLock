@@ -1,0 +1,23 @@
+[package]
+name = "memberlock"
+version = "0.1.0"
+edition = "2021"
+description = "Badge gate for a Ruida laser: jog and red-dot frame stay available, tube fire waits for a trained UniFi Access member."
+publish = false
+
+[dependencies]
+anyhow = "1"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serialport = "4"
+socket2 = "0.5"
+tokio = { version = "1", features = ["macros", "net", "rt-multi-thread", "sync", "time"] }
+toml = "0.8"
+windows = { version = "0.61", features = [
+    "Win32_Foundation",
+    "Win32_Graphics_Gdi",
+    "Win32_UI_Shell",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_System_LibraryLoader",
+] }
